@@ -14,30 +14,22 @@ var button = document.querySelector('button'),
     secondParChildren = secondPar.children;
 
 button.addEventListener('click', function changeColor() {
-    firstPar.classList.add('green');
     for (var i = 0; i < firstParChildren.length; i++) {
         firstParChildren[i].classList.add('green');
     }
 })
 
+
 for (var i = 0; i < secondParChildren.length; i++) {
     secondParChildren[i].id = 'secondParLink' + [i + 1];
 }
 
-var secondParLinkOne = document.getElementById('secondParLink1'),
-    secondParLinkTwo = document.getElementById('secondParLink2'),
-    linkAttrOne = secondParLinkOne.getAttribute('href'),
-    linkAttrTwo = secondParLinkTwo.getAttribute('href');
+var selectedLink;
 
-console.log(linkAttrOne);
-console.log(linkAttrTwo);
-
-secondParLinkOne.addEventListener('click', function () {
-    event.preventDefault();
-    alert(linkAttrOne);
-})
-
-secondParLinkTwo.addEventListener('click', function () {
-    event.preventDefault();
-    alert(linkAttrTwo);
-})
+secondPar.onclick = function (event) {
+    var target = event.target;
+    if (target.tagName === 'A') {
+        event.preventDefault();
+        alert(target.getAttribute('href'));
+    }
+};

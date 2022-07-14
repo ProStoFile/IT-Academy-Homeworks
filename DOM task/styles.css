@@ -1,4 +1,5 @@
 .green {
     color: green;
-    text-decoration: none;
+    text-decoration: underline;
+    font-weight: 700;
 }
