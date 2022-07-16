@@ -16,7 +16,7 @@ var selectedTd;
 
 table.onclick = function (event) {
     var td = event.target.closest('td'),
-        input = document.createElement('input');
+        itemText;
 
     if (!td) return;
 
@@ -25,22 +25,31 @@ table.onclick = function (event) {
     selectedTd = td;
 
     if (selectedTd.getAttribute('id') !== 'button') {
-        selectedTd.append(input);
+        var input = document.createElement('input');
+
+        selectedTd.replaceWith(input);
+
         input.setAttribute('type', 'input');
-        input.setAttribute('contenteditable', 'true');
+        itemText = selectedTd.innerText;
+
+        input.value = itemText;
         input.focus();
 
-        input.onblur = function () {
+        input.addEventListener('keydown', function (evt) {
+            if (evt.keyCode === 13) {
+                input.blur();
+            }
+        });
 
-            selectedTd.textContent = input.value;
-            input.remove();
-        }
-
-        input.onfocus = function () {
-            input.value = selectedTd.textContent;
-            textContent.remove();
+        input.onblur = function saveTableData() {
+            itemText = input.value;
+            selectedTd.innerHTML = itemText;
+            input.replaceWith(selectedTd);
         }
 
     }
 
 };
+
+
+

@@ -3,26 +3,28 @@
 }
 
 table {
-    text-align: left;
+    text-align: center;
     border-collapse: separate;
     border: 1px solid #ddd;
     border-spacing: 10px;
-    border-radius: 3px;
+    border-radius: 10px;
     background: #fdfdfd;
+    font-family: Roboto;
     font-size: 14px;
 }
 
 tr {
-    height: 30px;
+    height: 40px;
 }
-td{
+
+td {
     width: 200px;
 }
 
 td, th {
     border: 1px solid #ddd;
     padding: 5px;
-    border-radius: 3px;
+    border-radius: 10px;
 }
 
 #button {
@@ -30,6 +32,9 @@ td, th {
     text-align: center;
 }
 
-.green {
-    background-color: green;
+input, input[type="input"] {
+    width: 204px;
+    border: 1px solid #ddd;
+    height: 36px;
+    border-radius: 10px;
 }
