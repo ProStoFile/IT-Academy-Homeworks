@@ -1,0 +1,35 @@
+.container {
+    width: 100%;
+}
+
+table {
+    text-align: left;
+    border-collapse: separate;
+    border: 1px solid #ddd;
+    border-spacing: 10px;
+    border-radius: 3px;
+    background: #fdfdfd;
+    font-size: 14px;
+}
+
+tr {
+    height: 30px;
+}
+td{
+    width: 200px;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+#button {
+    background: #E4E4E4;
+    text-align: center;
+}
+
+.green {
+    background-color: green;
+}
