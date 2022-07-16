@@ -17,7 +17,6 @@ var selectedTd;
 table.onclick = function (event) {
     var td = event.target.closest('td'),
         input = document.createElement('input');
-    input.type = 'text';
 
     if (!td) return;
 
@@ -26,8 +25,21 @@ table.onclick = function (event) {
     selectedTd = td;
 
     if (selectedTd.getAttribute('id') !== 'button') {
-        // input.setAttribute('type', 'input');
         selectedTd.append(input);
+        input.setAttribute('type', 'input');
+        input.setAttribute('contenteditable', 'true');
+        input.focus();
+
+        input.onblur = function () {
+
+            selectedTd.textContent = input.value;
+            input.remove();
+        }
+
+        input.onfocus = function () {
+            input.value = selectedTd.textContent;
+            textContent.remove();
+        }
 
     }
 
