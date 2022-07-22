@@ -9,7 +9,7 @@ var button = document.querySelector('button'),
 button.disabled = true;
 
 function handleChange() {
-    for (const input of inputs) {
+    for (var input of inputs) {
         if (input.value === "") {
             button.setAttribute('disabled', '');
             return;
@@ -18,7 +18,7 @@ function handleChange() {
     button.removeAttribute('disabled');
 }
 
-for (const input of inputs) {
+for (var input of inputs) {
     input.onkeyup = input.change = handleChange;
 }
 
