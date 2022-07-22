@@ -1,0 +1,54 @@
+.container {
+    width: 100%;
+}
+
+table {
+    text-align: center;
+    border-collapse: separate;
+    border: 1px solid #ddd;
+    border-spacing: 5px;
+    border-radius: 5px;
+    background: #fdfdfd;
+    font-family: Roboto;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.button {
+    margin-top: 10px;
+    width: 100%;
+    font-family: Roboto;
+}
+
+.input__form {
+    display: block;
+    justify-content: center;
+    margin: 10px 0px 10px 10px;
+    width: 150px;
+}
+
+tr {
+    height: 50px;
+}
+
+td {
+    width: 50px;
+}
+
+.button, input, td, th {
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.black {
+    background-color: black;
+}
+
+.getY {
+    margin-top: 10px;
+}
+
+input {
+    width: 138px;
+}
